@@ -386,11 +386,12 @@ module BootstrapForm
 
     def generate_help(name, help_text)
       help_text = get_error_messages(name) if has_error?(name) && inline_errors
+      other_class =  has_error?(name) ? 'text-danger' : ""
       return if help_text === false
 
       help_text ||= get_help_text_by_i18n_key(name)
 
-      content_tag(:span, help_text, class: 'help-block') if help_text.present?
+      content_tag(:span, help_text, class: "help-block #{other_class}") if help_text.present?
     end
 
     def generate_icon(icon)
