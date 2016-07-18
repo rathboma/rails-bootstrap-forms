@@ -259,7 +259,7 @@ module BootstrapForm
     end
 
     def label_class
-      "form-control-label"
+      ""
     end
 
     def error_class
