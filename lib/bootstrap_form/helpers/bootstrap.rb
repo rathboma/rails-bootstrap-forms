@@ -65,8 +65,8 @@ module BootstrapForm
 
         input = capture(&block)
 
-        input = content_tag(:span, options[:prepend], class: input_group_class(options[:prepend])) + input if options[:prepend]
-        input << content_tag(:span, options[:append], class: input_group_class(options[:append])) if options[:append]
+        input = content_tag(:span, content_tag(:span, options[:prepend], class: 'input-group-text'), class: 'input-group-prepend') + input if options[:prepend]
+        input << content_tag(:span, content_tag(:span, options[:append], class: 'input-group-text'), class: 'input-group-append') if options[:append]
         input = content_tag(:div, input, class: input_group_class) unless options.empty?
         input
       end
